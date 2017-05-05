@@ -2,15 +2,15 @@
 This mod adds a 3d vector class to Minetest.
 
 ### Create a new vector
-To create a new vector you have to use the method vec3d()
+To create a new vector you have to use the method `vec3d()`
 
 #### Example
 
 	local v = vec3d()      -- creates the vector {x = 0, y = 0, z = 0}
 	local v = vec3d(5,3,1) -- creates the vector {x = 5, y = 3, z = 1}
 
-### Format output
-If a vector is print to the console with the print command the output is formatted
+### Formatted output
+If a vector is printed to the console with the `print()` command the output is formatted in the order x, y, z
 
 #### Example
 
@@ -22,8 +22,7 @@ The output is: `(5, 3, 1)`
 ### Misc functions
 
 #### `vec3d:clone()`
-*   Creates a copy of a vector
-
+Creates a copy of a vector
 
 	local v1 = vec3d(10, 20, 2)
 	local v2 = v1:clone()
@@ -33,8 +32,7 @@ The output is: `(5, 3, 1)`
 Prints the output `(10, 20, 2)	(0, 20, 2)`
 
 #### `vec3d:unpack()`
-*   Returns the single componets of the vector
-
+Returns the single componets of the vector
 
 	local v1 = vec3d(10, 20, 2)
 	local x, y, z = v1:unpack()
@@ -110,3 +108,16 @@ Vectors can be compared with `==`
 	print(v1 == v2)
 
 Prints `false` to the console
+
+### Vector functions
+
+#### `vec3d.distance(a, b)` `vec3d:distance_to(x)`
+Return the distance between two vectors
+
+##### Examples
+	local v1 = vec3d(10, 20, 2)
+	local v2 = vec3d(20, 30, 5)
+	print(vec3d.distance(v1, v2))
+	print(v1:distance_to(v2))
+
+Both functions return `14.456832294801`
