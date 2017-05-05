@@ -1,6 +1,8 @@
 ## vec3d is a class library for 3d vectors.
 This mod adds a 3d vector class to Minetest.
 
+Some functions exist in two versions. One version returns a new vector, the other version modifys a vector. 
+
 ### Create a new vector
 To create a new vector you have to use the method `vec3d()`
 
@@ -9,7 +11,7 @@ To create a new vector you have to use the method `vec3d()`
 	local v = vec3d()      -- creates the vector {x = 0, y = 0, z = 0}
 	local v = vec3d(5,3,1) -- creates the vector {x = 5, y = 3, z = 1}
 
-#### Eccess the componets
+#### Access the componets
 
 	local x = v.x
 	local y = v.y

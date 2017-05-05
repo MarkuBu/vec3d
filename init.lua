@@ -168,7 +168,6 @@ function vec3d:normalize()
 	self.x = self.x / len
 	self.y = self.y / len
 	self.z = self.z / len
-	-- return self
 end
 
 function vec3d:normalized()
@@ -179,7 +178,6 @@ function vec3d:round()
 	self.x = math.floor(self.x + 0.5)
 	self.y = math.floor(self.y + 0.5)
 	self.z = math.floor(self.z + 0.5)
-	-- return self
 end
 
 function vec3d:rounded()
@@ -193,7 +191,6 @@ function vec3d:floor()
 	self.x = math.floor(self.x)
 	self.y = math.floor(self.y)
 	self.z = math.floor(self.z)
-	-- return self
 end
 
 function vec3d:floored()
@@ -289,8 +286,4 @@ function vec3d:yaw()
 	return yaw
 end
 
---
-local v1 = vec3d(10, 20, 2)
-local v2 = vec3d(20, 30, 5)
-print(vec3d.distance(v1, v2))
-print(v1:distance_to(v2))
+u
