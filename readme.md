@@ -1,7 +1,7 @@
 ## vec3d is a class library for 3d vectors.
 This mod adds a 3d vector class to Minetest.
 
-Some functions exist in two versions. One version returns a new vector, the other version modifys a vector. 
+Some functions exist in two versions. One version returns a new vector, the other version modifys a vector.
 
 ### Create a new vector
 To create a new vector you have to use the method `vec3d()`
@@ -67,10 +67,10 @@ Returns the single componets of the vector
 *   returns new unit vector pointing backward (-z)
 
 ### Basic arithmetics
-This class has two methods for basic arithmetics.
+This class has two ways for basic arithmetics.
 
 #### Operators
-The first uses regular math operators +, -, \*, /. The method creates a new vector as result. Both operands can be a vector or a number.
+The first uses regular math operators +, -, \*, /. This way creates a new vector as result. Both operands can be a vector or a number.
 
 #### Example
 
@@ -88,7 +88,7 @@ This prints `(7, 7, 7)`
 This prints `(25, 15, 5)`
 
 #### Methodes
-The second method uses a class methode to modify a vector. This method doesn't create a new vector and is slightly faster.
+The second way uses a class methode to modify a vector. The class methodes don't create a new vector and is slightly faster.
 
 `x` can be a vec3d or a number
 
