@@ -253,16 +253,25 @@ function vec3d:scalar_projection(a, b)
 	return (a + ab)
 end
 
+-- function vec3d:is_between(a, b)
+-- 	local ab = b - a
+-- 	local ap = self - a
+-- 	-- local l = ap:len()
+-- 	local dot = math.abs(ap:dot(ab))
+-- 	-- print(a, b, self, dot)
+-- 	if ap:len() < ab:len() and dot > 0.9 and dot < 1.1 then
+-- 		return true
+-- 	end
+-- 	return false
+-- end
+
 function vec3d:is_between(a, b)
 	local ab = b - a
 	local ap = self - a
-	-- local l = ap:len()
-	local dot = math.abs(ap:dot(ab))
-	-- print(a, b, self, dot)
-	if ap:len() < ab:len() and dot > 0.9 and dot < 1.1 then
-		return true
-	end
-	return false
+	local lp = ap:len()
+	local lb = ab:len()
+	local dot = ap:dot(ab) / (lp * lb)
+	return lp < lb and dot > 0.95
 end
 
 -- returns the scalar triple product of three vectors
@@ -272,7 +281,7 @@ end
 
 -- returns the angle between two 2d vectors (x,z) in radians
 -- y from a 3d vector is ignored
-function vec3d.angle_between(a, b)
+function vec3d.angle_between_2d(a, b)
 	return math.atan2(a.x * b.z - a.z * b.x, a.x * b.x + a.z * b.z)
 end
 
@@ -286,4 +295,8 @@ function vec3d:yaw()
 	return yaw
 end
 
-u
+-- Test code ----------------------
+-- local v1 = vec3d(10, 10, 10)
+-- print(v1:len())
+-- v1:set_length(1.1)
+-- print(v1:len())
